@@ -1,0 +1,3 @@
+0: Insert(5,3)
+3: Insert(7,2)
+10: Insert(1,10)
