@@ -68,11 +68,11 @@ public class MinHeap{
 		
 		
 		// If left child is larger than root 
-				if (l < n && building[l].getExecution_time() < building[smallest].getExecution_time()) 
+				if (l < n && building[l].getExecution_time() < building[i].getExecution_time()) 
 					smallest = l; 
 
 				// If right child is larger than largest so far 
-				if (r < n && building[r].getExecution_time() < building[smallest].getExecution_time()) 
+				if (r < n && building[r].getExecution_time() < building[i].getExecution_time()) 
 					smallest = r; 
 		
 		// If largest is not root 
@@ -138,6 +138,7 @@ public class MinHeap{
 			} 
 
 		}
+		
 
 	}
 

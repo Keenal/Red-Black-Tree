@@ -15,8 +15,8 @@ public class ReadFile {
 	private Scanner scan1;
 	public void openFile() {
 		try {
-			scan = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input.txt"));
-			scan1 = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input.txt"));
+			scan = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input1.txt"));
+			scan1 = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input1.txt"));
 		}
 		catch(Exception e) {
 			System.out.println("File could not be found.");
@@ -89,7 +89,7 @@ public class ReadFile {
 					minheap.printHeap(building);
 					minheap.heapify(building, minheap.heapsize, 0);
 					System.out.println("heapify");
-					while(numOfDays[j]-globalCounter > 5 && j < c) {
+					while(numOfDays[j]-globalCounter > 0 && j < c) {
 						constructing(building);
 						System.out.println("after constructing");
 						minheap.printHeap(building);
