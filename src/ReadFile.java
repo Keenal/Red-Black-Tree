@@ -15,8 +15,8 @@ public class ReadFile {
 	private Scanner scan1;
 	public void openFile() {
 		try {
-			scan = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input1.txt"));
-			scan1 = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input1.txt"));
+			scan = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input3.txt"));
+			scan1 = new Scanner(new File("C:\\Users\\Keena\\eclipse-workspace\\ADS\\src\\input3.txt"));
 		}
 		catch(Exception e) {
 			System.out.println("File could not be found.");
@@ -33,7 +33,7 @@ public class ReadFile {
 			building[0].setExecution_time(building[0].getExecution_time()+5);
 
 			globalCounter=globalCounter + 5;
-			System.out.println("Global Counter from " + globalCounter);
+	//		System.out.println("Global Counter from " + globalCounter);
 	//		System.out.println(building[0].getTotal_time());
 
 		}
@@ -43,7 +43,7 @@ public class ReadFile {
 			building[0].setExecution_time(building[0].getExecution_time()+building[0].getTotal_time());
 			building[0].setTotal_time(0);
 	//		System.out.println(building[0].getTotal_time());
-			System.out.println("Global Counter from1 " + globalCounter);
+	//		System.out.println("Global Counter from1 " + globalCounter);
 			deleteRoot(building);
 
 
@@ -85,17 +85,27 @@ public class ReadFile {
 					int buildingNums = Integer.parseInt(line.substring(leftP+1, comma));
 					int total_time = Integer.parseInt(line.substring(comma+1, rightP)); 
 					minheap.insertKey(building, buildingNums, total_time);
-					System.out.println("After insertion");
-					minheap.printHeap(building);
+		//			System.out.println("After insertion");
+		//			minheap.printHeap(building);
 					minheap.heapify(building, minheap.heapsize, 0);
-					System.out.println("heapify");
-					while(numOfDays[j]-globalCounter > 0 && j < c) {
-						constructing(building);
-						System.out.println("after constructing");
-						minheap.printHeap(building);
+		//			System.out.println("heapify");
+					while(globalCounter < numOfDays[j]) {
+					//	constructing(building);
+						
+						
+						
+						
+		//				System.out.println("after constructing");
+						//minheap.printHeap(building);
+						if(minheap.heapsize==0) {
+							globalCounter = globalCounter+1;
+						}
+						else {
+							
+						}
 						minheap.heapify(building, minheap.heapsize, 0);
-						System.out.println("after heapify");
-						minheap.printHeap(building);
+		//				System.out.println("after heapify");
+						//minheap.printHeap(building);
 					}
 					j++;
 
@@ -115,11 +125,11 @@ public class ReadFile {
 			
 			while(minheap.heapsize > 0) {
 				constructing(building);
-				System.out.println("after constructing");
-				minheap.printHeap(building);
+		//		System.out.println("after constructing");
+		//		minheap.printHeap(building);
 				minheap.heapify(building, minheap.heapsize, 0);
-				System.out.println("after heapify");
-				minheap.printHeap(building);
+		//		System.out.println("after heapify");
+		//		minheap.printHeap(building);
 			}
 
 

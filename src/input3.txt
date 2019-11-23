@@ -1,0 +1,7 @@
+0: Insert(50,20)
+15: Insert(15,25)
+25: Insert(30,30)
+30: Insert(17,5)
+37: Insert(12,10)
+41: Insert(39,52)
+45: Insert(44,19)

@@ -66,14 +66,25 @@ public class MinHeap{
 			}
 		}
 		
+		if(r < n && building[r].getExecution_time() < building[smallest].getExecution_time() &&
+				building[l].getExecution_time()<building[smallest].getExecution_time() &&
+				building[l].getExecution_time()==building[r].getExecution_time()) {
+			if(building[l].getBuilding_nums()>building[r].getBuilding_nums()) {
+				smallest = r;
+			}
+			else {
+				smallest = l;
+			}
+		}
 		
 		// If left child is larger than root 
-				if (l < n && building[l].getExecution_time() < building[i].getExecution_time()) 
-					smallest = l; 
+		else if (l < n && building[l].getExecution_time() < building[i].getExecution_time()) 
+			smallest = l; 
 
-				// If right child is larger than largest so far 
-				if (r < n && building[r].getExecution_time() < building[i].getExecution_time()) 
-					smallest = r; 
+		// If right child is larger than largest so far 
+		else if (r < n && building[r].getExecution_time() < building[i].getExecution_time()) 
+			smallest = r; 
+		
 		
 		// If largest is not root 
 		if (smallest != i) 
@@ -132,10 +143,11 @@ public class MinHeap{
 					building[parent(lastHeap)] =  temp2; 
 					lastHeap = parent(lastHeap); 
 				} 
-				else { 
-					lastHeap = parent(lastHeap);
-				}
+				
 			} 
+			else { 
+				lastHeap = parent(lastHeap);
+			}
 
 		}
 		
